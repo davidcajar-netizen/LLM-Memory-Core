@@ -1,9 +1,9 @@
 ---
-tags: [protocol-design, llm-trust, anti-overengineering, epistemic-constraints, formatting]
+tags: [memory-system, atomicity, design-principle, anti-hoarding, modularity, file-organization]
 links:
-  - file: mem5.md
-    relation: shares-pattern
-  - file: mem6.md
+  - file: mem4.md
+    relation: supports-method
+  - file: mem3.md
     relation: shares-pattern
 ---
 
