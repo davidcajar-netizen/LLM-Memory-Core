@@ -1,7 +1,7 @@
 ---
-tags: [memory-system, github-repository, flat-files, yaml-frontmatter, search-retrieval, associative-network]
+tags: [memory-system, github-repository, flat-files, yaml-frontmatter, search-retrieval, associative-network, davidcajar-netizen, architecture]
 links:
-  - file: mem1.md
+  - file: mem2.md
     relation: supports-method
   - file: mem5.md
     relation: shares-pattern
