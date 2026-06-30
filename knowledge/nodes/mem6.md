@@ -1,9 +1,9 @@
 ---
 tags: [protocol-design, gate-placement, scope, verification, anti-sycophancy, epistemic-constraints]
 links:
-  - file: protocol-modularization.md
+  - file: mem5.md
     relation: supports-method
-  - file: trust-llm-formatting.md
+  - file: mem3.md
     relation: shares-pattern
 ---
 
