@@ -1,9 +1,9 @@
 ---
 tags: [protocol-design, llm-trust, anti-overengineering, epistemic-constraints, formatting, token-efficiency]
 links:
-  - file: atomicity-constraint.md
+  - file: mem2.md
     relation: shares-pattern
-  - file: protocol-modularization.md
+  - file: mem5.md
     relation: shares-pattern
 ---
 
