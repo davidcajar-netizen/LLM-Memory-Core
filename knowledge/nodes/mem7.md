@@ -1,27 +1,28 @@
 ---
-tags: [memory-system, naming-convention, semantic-filenames, human-readability, search-retrieval]
+tags: [memory-system, naming-convention, sequential-numbering, upload-efficiency, intentional-friction]
 links:
-  - file: memory-system-architecture.md
+  - file: mem4.md
     relation: supports-method
+  - file: mem2.md
+    relation: shares-pattern
 ---
 
-## Semantic Naming Convention for Memory Files
+## Sequential Numbering Convention for Memory Files
 
-Memory files use semantic filenames for human readability, while tags handle machine retrieval.
-
-**Filename format:**
-`{topic}-{key-concept}.md`
-
-**Examples:**
-- `marker-pdf-conversion.md`
-- `atomicity-constraint.md`
-- `trust-llm-formatting.md`
+Memory files use sequential numbering (mem1.md, mem2.md, mem3.md, etc.) rather than semantic naming.
 
 **Rationale:**
-- Semantic names are human-readable when browsing the GitHub repository
-- Tags enable search-based retrieval by the LLM
-- The filename itself doesn't affect retrieval since search uses tags and content
-- Sequential numbering (001.md, 002.md) loses self-documenting property
+- Faster upload process: just increment the number instead of generating meaningful filenames
+- Intentional friction: prevents casual human browsing and editing of the memory system
+- Faster targeted updates: reference "mem3" instead of searching for the right semantic name
+- Retrieval uses tags and GitHub search, not filenames, so semantic names aren't needed for LLM access
 
 **Trade-off:**
-Semantic names require the LLM to generate meaningful filenames, but this is a formatting task the LLM handles well. The retrieval system doesn't depend on filenames.
+- Humans cannot easily infer content from filename
+- This is acceptable because the LLM retrieves via tags, and humans only update files when explicitly directed by the LLM
+
+**Update workflow:**
+When a memory needs updating, the LLM references the specific mem number (e.g., "update mem3"), and the human counts to that file in the repository. This is faster than searching for a semantic filename.
+
+**Implementation:**
+The memory_system.md gate (Gate 21) enforces atomicity but does not require semantic filenames. The LLM generates sequential numbers (mem1, mem2, mem3...) and the human uploads them as-is.
