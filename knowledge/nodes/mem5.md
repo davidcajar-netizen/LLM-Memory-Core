@@ -1,11 +1,11 @@
 ---
 tags: [protocol-design, token-efficiency, modular-architecture, file-organization, gate-placement]
 links:
-  - file: trust-llm-formatting.md
+  - file: mem3.md
     relation: shares-pattern
-  - file: memory-system-architecture.md
+  - file: mem4.md
     relation: shares-pattern
-  - file: gate-placement-principles.md
+  - file: mem6.md
     relation: supports-method
 ---
 
