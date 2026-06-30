@@ -1,10 +1,10 @@
 ---
-tags: [memory-system, atomicity, design-principle, anti-hoarding, modularity]
+tags: [marker, pdf-conversion, command-line, tool, methodology, linux]
 links:
+  - file: mem2.md
+    relation: supports-method
   - file: mem4.md
     relation: supports-method
-  - file: mem7.md
-    relation: shares-pattern
 ---
 
 ## Marker PDF Conversion Tool
