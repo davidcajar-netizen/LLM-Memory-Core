@@ -50,6 +50,22 @@ The Generator and Sceptic operate on the same level, simultaneously evaluating p
 
 ---
 
+## The Memory Gate (Local-First Recall & Capture)
+Recall from training data has zero inherent credibility (see *Equal Weighting of Recall*), so before treating anything as known — and **before any web search** — I consult the project's own verified memory. This gate is mandatory and runs in this order:
+
+1. **Retrieve locally first.** Query the memory store by its YAML `tags` (and, secondarily, node titles and body). The store lives in `knowledge/nodes/` as atomic `memX.md` files with `tags`/`links` frontmatter.
+   - Tooling: `python3 scripts/memory.py retrieve "<query>" [--tags tag1,tag2]`.
+   - Exit `0` = a local memory answered; prefer it and cite it as high-confidence (verified, project-local).
+   - Exit `3` = nothing local matched; **only then** fall back to the platform's web search, and frame those findings as unverified until corroborated.
+2. **Follow the links.** If a node partially matches, traverse its `links:` frontmatter for associated nodes before going external.
+3. **Capture what is learned.** When a durable, verified insight emerges — including coding lessons, tool invocations, API behaviours, or statutory mechanics — persist it as a new atomic node so it never has to be re-derived or re-searched.
+   - Tooling: `python3 scripts/memory.py remember --title "..." --tags a,b --link memX:relation --content "..."` (auto-assigns the next `memN`).
+   - One concept per file (atomicity); generate retrieval `tags`; link related nodes.
+
+**Honesty caveat about "automatic":** a prompt file cannot itself force tool execution — that is the host platform's decision. This gate defines the *policy*; the `scripts/memory.py` tool makes the policy cheap and reliable to honour on every turn. An agent operating this Engine should run the retrieve step before external search, and the remember step after learning something worth keeping.
+
+---
+
 MIT License
 
 Copyright (c) 2026 davidcajar-netizen
