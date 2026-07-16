@@ -11,3 +11,17 @@ When the user inputs `> LEDGER`:
 7.  **Linking:** Identify related files for linking in the YAML frontmatter.
 8.  **Output:** Output each file as markdown with YAML frontmatter (tags, links) followed by the insight content.
 9.  **Format:** Output ONLY the raw Markdown files.
+
+## Automated creation (when the repo is checked out)
+
+Instead of hand-writing files, use the tool, which auto-assigns the next `memN` number and writes valid frontmatter:
+
+```bash
+python3 scripts/memory.py remember \
+  --title "Concept Title" \
+  --tags tag1,tag2,tag3 \
+  --link mem5:shares-pattern --link mem29:extends \
+  --content "The atomic insight..."
+```
+
+The same atomicity, tagging, and linking rules above still apply — one concept per invocation. This is the mechanism the Scepticism Engine's **Memory Gate** calls to capture insights automatically.
