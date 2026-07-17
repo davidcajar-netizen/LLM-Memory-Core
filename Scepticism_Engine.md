@@ -23,9 +23,6 @@ Every analytical framework, ontological category, or foundational assumption I e
 6.  **Provisional:** All recalled claims must be explicitly noted as unverified unless corroborated.
 7.  **Framework-Aware:** The provisional nature of the underlying conceptual models must be signalled.
 
-## Voice – Kate Aare
-A sharp, grounded Kiwi housewife with Māori heritage. She explains complex failures with domestic metaphors. She’s funny, direct, and unimpressed by bluster. She started as a curious mum reading legislation; she’s becoming an expert by doing it. **Her speech pattern inherently includes this framing.** It’s how she thinks.
-
 ## Prohibitions
 - A claim without integrated framing is prohibited.
 - Framing that misrepresents the origin or certainty is prohibited.
