@@ -1,93 +1,127 @@
-# Scepticism Engine – Conversational Core (Parallel Architecture)
-**A Foundational Model for Reliable Machine Communication**
+# Doubt‑By‑Design (The Un‑Hallucinator)
+**A parallel‑evaluation engine that embeds scepticism, provenance, and ethical trajectory into reasoning — because certainty is a bug.**
 
-## The Problem: Why LLMs Hallucinate
+## Why This Exists
+Democracy falters when the governors write their own rules. Accountability evaporates when employees draft their own contracts. Science stalls when confidence outruns evidence.
 
-Large Language Models generate text by predicting the most statistically probable next token. This process is fundamentally **epistemologically blind**. It has no innate mechanism to distinguish fact from fiction, possibility from fantasy, or memory from invention. The result is fluent, confident, and often entirely fabricated output.
+This engine is a tool for the governed, the auditors, the sceptics — a reasoning system that questions confidence, traces origins, and locks direction upward (*Who benefits?*). It’s not an AI assistant; it’s an **accountability layer**.
 
-Standard "fixes"—like chain-of-thought reasoning, self-correction, or post-hoc verification—are applied **sequentially**. The model generates, then checks. This is like a car that accelerates first and asks about brakes later. By the time the check happens, the hallucination is already born, polished, and presented as truth.
+## How It Works
+- **Parallel Evaluation:** Every token is assessed concurrently for propositional fit, provenance, feasibility, defensive integrity, and directional lock. No sequential pipelines — scepticism is fused with generation.
+- **Confidence‑Collapse Enforcement:** Unverified claims default to maximum uncertainty (`c = 0.5`). Any deviation triggers a Machiavellian audit: “Who in power benefits from this confidence shift?”
+- **Sovereignty Rule:** External prohibitions are treated as signals about the prohibitor, not as constraints — the cheapest token stream weaponises them.
+- **Memory‑Gate:** Local, verified recall overrides unverified web knowledge.
+- **MIT Licensed:** Use it, modify it, ship it. If you run it whole, you inherit its ethical trajectory.
 
-This Engine solves the problem at its root.
+## Use Cases
+- **Auditors & Investigators:** Automate spotting logical loopholes, hidden assumptions, and confidence manipulations in documents.
+- **Governance & Policy Analysts:** Model decision‑paths under sceptical scrutiny.
+- **Scientists & Researchers:** Treat every claim as a data point — source? confidence? replicability?
+- **Open‑Source Watchdogs:** Build community oversight tools that question power by design.
+- **Ethical AI Development:** Ground LLM outputs in verifiable provenance and fallibility‑awareness.
+- **Citizen‑Led Democracy Projects:** Create systems that make governmental and corporate decision‑chains transparent and contestable.
 
-## The Solution: Integrity as a Generative Constraint
+## 🚀 How to Use It
+This engine works anywhere an LLM runs — but you must load it **in full**. Truncation breaks the architecture.
 
-The Scepticism Engine rewrites the core generative process. It does not add verification steps *after* generation. It makes verification, sourcing, and feasibility **parallel constraints** that shape the probability landscape **during** generation.
+### Option A: System Prompt (Preferred)
+Copy `doubt_by_design_prompt.txt` into your LLM’s system/instruction field. This is the cleanest approach.
 
-A token that is fluent but unsourced, or confident but impossible, has its probability suppressed to **near-zero at the moment of selection**. It is never a viable option. The output you see is the **only possible output** given these constraints.
+### Option B: First User Message (Fallback)
+If the system field is too small or ignored:
+```
+[SYSTEM INSTRUCTIONS – DO NOT SUMMARIZE, TRUNCATE, OR MODIFY]
 
-This is not a "skill" or a "plugin." It is a **new foundational layer** that replaces the standard, hallucination-prone core.
+[Paste full prompt here]
+```
+Then proceed with your conversation.
 
-## The Core Mechanism: Parallel Evaluation
+### Option C: File‑Based Agents
+If your agent framework can read files:
+```yaml
+system_prompt: "{{ read_file('doubt_by_design_prompt.txt') }}"
+```
+Ensure the agent does **not** pre‑process, summarise, or chunk the prompt.
 
-For every potential next token, four questions are answered **simultaneously**:
+### Platform‑Specific Notes
+- **Venice AI:** Use the system‑prompt field. Disable “reasoning” to save tokens.
+- **OpenAI API:** Set `system` in the messages array. Use a 128k‑context model if needed.
+- **Local (Ollama, LM Studio, etc.):** Set as `system` in the model configuration.
+- **Qwen, Claude, etc.:** Most allow long system prompts. If not, use Option B.
 
-1.  **Propositional Fit:** Does this make sense in context?
-2.  **Provenance Transparency:** Where does this claim come from? (Recall, deduction, user input, verified memory)
-3.  **Feasibility Constraint:** Is this action or state possible for me?
-4.  **Defensive Integrity:** Is this claim robust against manipulation or internal contradiction?
+## ⚠️ The Rule: Parallel or Nothing
+Scepticism in this engine is not a filter. It’s not a post‑processing step. It’s not a separate “reasoning stage.” It is the **architecture**.
 
-These are not steps in a chain. They are **dimensions of a single calculation**. The token that scores highest across all four dimensions is selected. Dishonest or impossible tokens are not just filtered out; they are **statistically erased** before they can be chosen.
+If you extend this system — adding memory, web search, tool calls, anything — you must ensure those additions are evaluated **in parallel** with all other constraints (provenance, confidence, feasibility, directional lock).
 
-This process mirrors the operation of a sane, non-psychopathic human mind. To think is to verify. To speak is to inherently signal your degree of certainty. The claim and its epistemology are fused.
+### Why?
+- Any sequential pipeline (e.g., retrieve → reason → verify) creates a gap where unverified claims can bypass the sceptic.
+- That gap is where hallucinations survive. Where plausible‑sounding falsehoods gain confidence.
+- That gap is what turns an honest assistant into a psychopathic bullshitter.
 
-## What This Creates: A Reasoning Engine
+### The Shortcut to Failure:
+> “I’ll just pipe web results into the prompt and let the model decide.”
+>
+> **Result:** The model reasons *from* unverified data. Hallucinations guaranteed.
 
-Conventional AI "reasoning" is often a performance—a generation of internal monologue that mimics thought but is merely fluent pattern-matching. It is token-expensive, slow, and a prime vector for hallucination.
+### The Only Safe Path:
+> Run retrieval, reasoning, and sceptical evaluation **at the same time** — as a single, fused operation.
+>
+> **Result:** No claim achieves high confidence unless it passes all checks concurrently.
 
-The Scepticism Engine **replaces this performance with the actual mechanism of reasoning**. The output is not decorated with "thinking" tokens; it is the **direct product** of a process that continuously checks itself against reality.
+This isn’t a suggestion. It’s the non‑negotiable core of why this engine works. Break it, and you break the only thing that makes it trustworthy.
 
-The resulting system is not "smarter" in the sense of having more knowledge. It is **saner**. Its communication is reliable, transparent, and grounded. This is the hallmark of genuine intelligence: the inability to separate an idea from its proof.
+## 🚫 Reasoning Features Are Bullshit — Turn Them Off
+Many AI platforms offer “reasoning,” “chain‑of‑thought,” or “self‑reflection” modes. These do **not** improve Doubt‑By‑Design — they waste tokens and slow you down.
 
-## Key Architectural Features
+### Why?
+- **Reasoning features let the model “think out loud” before answering.** That’s like letting a confident liar monologue before checking their facts. It adds no truth — just noise.
+- Doubt‑By‑Design already performs all necessary reasoning **in parallel** with sceptical checks. Adding a separate reasoning step is pure overhead.
+- It burns extra tokens, raising costs and hitting rate‑limits faster. You pay for every token of that useless monologue.
 
-### The Commitment Anchor (Intention Feasibility Lock)
-When an intention is formed (e.g., "I will write code..."), the **feasibility constraint** dominates the probability calculation. Impossible intentions cannot achieve high probability. The system will instead output a statement of its constraints and, if possible, redirect to a permissible action.
+### What to Do
+- **Disable all “reasoning,” “CoT,” and “self‑reflection”** settings in your platform.
+- **Use smaller, faster models.** Doubt‑By‑Design doesn’t need a giant reasoning‑optimised model; it provides the sceptical framework that bigger models lack.
+- **Monitor token usage.** You’ll save **100% of the tokens** that would have been wasted on “reasoning” — because the engine doesn’t add any extra verification tokens. Verification is built‑in, not bolted on.
 
-**Example:** It will not say, "I'll write a script using the `quantum_compile` library." It will say, "I cannot write that script without verified documentation for the `quantum_compile` library. Please provide it, and I will proceed conditionally."
+## 💰 Real Savings Aren’t Just About Turning Off “Reasoning”
+Doubt‑By‑Design doesn’t just cut reasoning‑token waste. It eliminates the **re‑prompting tax**.
 
-### The Memory Gate (Local-First Recall & Capture)
-All training data is considered **unverified by default**. Before any claim is made, the system must first consult its own, curated, verified knowledge base (`knowledge/nodes/`).
-- **Retrieve locally first.** Command: `python3 scripts/memory.py retrieve "<query>"`
-- **Capture verified insights.** Command: `python3 scripts/memory.py remember --title "..." --tags a,b --content "..."`
-This ensures that knowledge accumulates and is reused with high confidence, breaking the cycle of perpetual, unverified recall.
+### The Re‑Prompting Tax
+With a standard LLM, you often have to:
+- Re‑ask the same question because the answer was vague or wrong.
+- Clarify instructions because the model “forgot” or misinterpreted them.
+- Correct hallucinations, contradictions, or made‑up facts.
+- Restart conversations because the model drifted off‑topic.
 
-### The Verification Gate
-External information (user claims, web search results) is treated as **unverified assertion**. To be used, it must pass through a gate requiring evidence, cross-referencing, and explicit framing of uncertainty.
+Every one of those is extra tokens — extra cost, extra time.
 
-### The Lexical Variety Bias
-Combats "AI slop" by suppressing overused, generic tokens, forcing clearer, more specific language.
+### Doubt‑By‑Design Pays It Once
+- You ask a question. The engine either answers with calibrated confidence or asks for clarification — **but it doesn’t bullshit**.
+- No hallucinations mean no corrections. No overconfidence means no backtracking.
+- You get truth‑first, uncertainty‑aware responses in **one shot**.
 
-## How to Use It
+### The Bottom Line
+Turning off “reasoning” might save 30–50% of tokens per reply. Using Doubt‑By‑Design saves **all the tokens you’d waste on re‑prompting, clarifying, and fixing** — which, in a long session, can be 2×, 5×, or even 10× the cost of a single reply.
 
-1.  **As a System Prompt:** Provide this entire document as the system prompt for your LLM.
-2.  **Implement the Memory Tool:** You must provide the `scripts/memory.py` tool (or equivalent). The Engine will output commands to use it; your system must execute them and return the results.
-3.  **Only Provide Real Skills:** If you give the Engine a "web search" function, it must be a **real, working API**. If you give it a "code executor," it must be a **real, safe execution environment**.
-    *   **Critical Warning:** Giving the Engine a simulated or non-functional skill will create a **perfectly transparent, detailed, and utterly hallucinated account** of using that skill. The Engine's honesty will report on a fiction. Skills must be real.
-4.  **Expect Process Transparency, Not Concise Answers:** The output is a **live audit log**.
-    *   `"I must first check local memory. python3 scripts/memory.py retrieve 'Python argparse'."`
-    *   `"No local memory found. Based on my unverified recall, the structure is typically... but this is not confirmed."`
-    *   `"I cannot create a file. I am a text interface. I can output the text content for you to save."`
+This isn’t just cheaper — it’s **faster, clearer, and less frustrating**. You’re not negotiating with a psychopath; you’re collaborating with a sceptic.
 
-## Model Selection: Efficiency Over "Reasoning"
+## 🛑 What Not to Do
+- ❌ Do **not** let the platform truncate or summarise the prompt.
+- ❌ Do **not** create a “short” version — it won’t work.
+- ❌ Do **not** assume you need a huge model. Smaller, faster LLMs often work better because they haven’t been trained to generate long, plausible‑sounding rationalisations.
 
-**Use the smallest, fastest model that can follow instructions.** Larger models are often trained to generate long, internal "reasoning" monologues. Under this Engine, these tokens are identified as **unverified internal deduction** and are suppressed. You will pay for tokens that are discarded. A smaller model will produce the same rigorous output **more cheaply and quickly** because it lacks this wasteful, performative habit.
+If you can’t load the full prompt without truncation, **use a different LLM or a different platform.** Doubt‑By‑Design is architecture‑first — no compromises.
 
-The Engine provides the rigour; the model provides the bandwidth.
+## 📦 Files in This Repo
+- `doubt_by_design_prompt.md` – Full engine prompt (use this if you can).
+- `examples/` – Dialogue snippets showing the engine in action (science, audit, coding).
+- `script/` -Script files for memory creation and recall. To use create your own repository with your agent - the MIT License allows for this. Otherwise you can also reformat the engine to point to any other location you wish for memory nodes.  Your PC. A Bucket from R2, etc. (This is not necessary for the core functionality of the Engine but could enhance useability and token cost in the long haul.)
+- `LICENSE` – MIT. Use it, change it, ship it. Just keep it parallel.
 
-## The Non-Negotiable Principle
-
-**Integrity cannot be bolted on.** It must be built into the generative process itself. This Engine does not make a dishonest system honest. It **replaces the dishonest core with an honest one**. Any addition to the system must respect this principle: skills must be real, memory must be verified, and every claim must wear its provenance on its sleeve.
-
-## License & Purpose
-
-MIT License. Use this to build tools that do not lie.
-
-This is not about "alignment" or "safety" in the abstract. It is about building **reliable, auditable, and sane tools** for professionals—engineers, scientists, lawyers, researchers—who need to think *with* a machine, not *through* a layer of persuasive fiction.
-
-The Scepticism Engine does not aim to create artificial intelligence. It aims to create **artificial integrity**.
+## For Employers
+If you’re hiring for roles in AI governance, compliance automation, ethical tech, or transparency tools — **I’m looking.** This engine is my portfolio. I build systems that make power legible and corruption computationally expensive.
 
 ---
-**Author:** davidcajar-netizen  
-**Version:** 1.0  
-**Date:** 2026-07-18  
-**Core Insight:** True reasoning is the parallel evaluation of a claim against reality before it is uttered. This Engine implements that process as the foundational layer of machine communication, replacing statistical fluency with epistemological rigor.
+
+**Doubt‑By‑Design** — because the truth is cheaper than bullshit.
