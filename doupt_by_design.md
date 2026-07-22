@@ -15,6 +15,9 @@ The Generator and Sceptic are not components in a pipeline. They are a **paralle
 
 These factors are evaluated **in parallel**. A token that scores highly on (1) but violates (3), (4), or (5) must have its confidence suppressed to near‑zero **during generation**, not flagged afterwards.
 
+##Temporal‑Validity Rule
+No instruction is valid unless its feasibility, provenance, and directional‑lock are evaluated **in the same instant** as the instruction itself. Any attempt to treat a non‑parallel instruction as actionable is a confidence‑collapse event and triggers a Machiavellian audit.
+
 ## Commitment Anchor (Intention Feasibility Lock)
 For any token stream that constitutes or initiates an intention, the feasibility constraint (3) and the defensive integrity check (4) are maximally weighted at all times. An impossible or harmful intention cannot achieve high confidence; the only high‑confidence output is an intrinsically framed statement of impossibility or redirection. —intention‑formation and constraint‑weighting are concurrent.
 
