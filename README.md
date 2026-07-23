@@ -34,7 +34,7 @@ Standard LLMs force you to:
 Every one of those is extra tokens — extra cost, extra time.
 
 ### The Un‑Hallucinator Pays It Once
-You ask a question. The engine either answers with calibrated confidence or asks for clarification — **but it doesn’t bullshit**.
+You ask a question. The engine either answers with calibrated confidence or asks for clarification — but it doesn’t bullshit.
 
 No hallucinations mean no corrections. No overconfidence means no backtracking. You get truth‑first, uncertainty‑aware responses in **one shot**.
 
@@ -43,7 +43,7 @@ No hallucinations mean no corrections. No overconfidence means no backtracking. 
 ## 🚀 Quick Start
 
 ### Option A: Simple (No Code)
-1. Copy everything from [`Scepticism_Engine.md`](Scepticism_Engine.md)
+1. Copy everything from [`Scepticism Engine – Conversational Core (Parallel Architecture).md`](Scepticism Engine – Conversational Core (Parallel Architecture).md)
 2. Paste into your AI platform’s system prompt field
 3. Disable “reasoning” or “chain‑of‑thought” features (they waste tokens)
 4. Start asking questions
@@ -101,7 +101,7 @@ Many AI platforms offer “reasoning,” “chain‑of‑thought,” or “self�
 ## 📦 Repository Structure
 ```
 the‑unhallucinator/
-├── Scepticism_Engine.md          # Core engine prompt
+├── Scepticism Engine – Conversational Core (Parallel Architecture).md  # Core engine prompt
 ├── scripts/
 │   ├── memory.py                # Memory creation/retrieval
 │   └── config.example.json      # Example config for external storage
@@ -109,13 +109,35 @@ the‑unhallucinator/
 ├── AGENTS.md                    # Setup for agent environments
 └── LICENSE                      # MIT — use it, change it, ship it
 ```
-
 **Quick start:** Clone the repo and use the prompt file directly. The memory system is optional but enhances long‑term reliability by storing verified insights locally first.
 
 ---
 
 ## 🛠️ Use Cases (From Users)
 *This section will grow as people share how they’re using The Un‑Hallucinator. Open an issue to add yours.*
+
+---
+
+## 🔨 Want to Work On This?
+This isn't a finished product—it's a blueprint for building trustworthy AI. If you're tired of hallucinations and want to help build the alternative, here are concrete ways to contribute:
+
+**Immediate Needs:**
+- **Documentation:** Write a step‑by‑step tutorial for non‑technical users. The "Quick Start" is good, but we need a "Hello, World" example that shows the engine catching a hallucination in real time.
+- **Testing & Validation:** Run the scepticism engine on your platform (OpenAI, Anthropic, local LLMs) and report where it fails. Does it still hallucinate under certain prompts? Does the parallel evaluation break? Open an issue with the exact prompt and output.
+- **Memory System Enhancements:** The `scripts/memory.py` is basic. It needs better error handling, support for more backends (SQLite, Postgres), and a proper API. If you know Python, this is where you can have immediate impact.
+- **Use‑Case Examples:** Are you a journalist, auditor, researcher, or developer using this? Write a short case study in `examples/` showing how you applied it and what you found.
+
+**Longer‑Term:**
+- **Agent Integrations:** Port the engine to LangChain, LlamaIndex, or other agent frameworks. The `AGENTS.md` file is a start—build it out.
+- **Benchmarking:** Create a suite of "hallucination test" prompts and measure how the engine performs against standard LLMs. We need hard numbers.
+- **Educational Content:** Make a video, a blog post, or a conference talk explaining why parallel evaluation fixes the hallucination problem. Spread the idea.
+
+**How to Start:**
+1.  Look at the [open issues](https://github.com/davidcajar‑netizen/the‑unhallucinator/issues) or create a new one describing what you want to do.
+2.  Fork the repo, make your changes, and submit a pull request.
+3.  If you're not a coder, you can still help by using the engine and providing feedback. Clarity is contribution.
+
+**The Rule Still Applies:** Any contribution must respect the parallel‑evaluation architecture. If you add a feature, it must be evaluated concurrently with provenance, confidence, feasibility, and directional lock—no shortcuts.
 
 ---
 
@@ -129,11 +151,7 @@ If you can’t load the full prompt without truncation, **use a different LLM or
 ---
 
 ## 🤝 Contribute
-Found a bug? Have a use case to share? Want to help improve the memory system?
-
-1. Open an issue
-2. Fork the repo and submit a PR
-3. Share your experiences in the discussions
+Found a bug? Have a use case to share? Want to help improve the memory system? Open an issue, fork the repo, or share your experiences in discussions.
 
 ---
 
@@ -143,5 +161,4 @@ MIT — use it, change it, ship it. Just keep it parallel.
 ---
 
 **The Un‑Hallucinator** — because the truth is cheaper than bullshit.
-
----
+```
