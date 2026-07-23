@@ -43,7 +43,7 @@ No hallucinations mean no corrections. No overconfidence means no backtracking. 
 ## 🚀 Quick Start
 
 ### Option A: Simple (No Code)
-1. Copy everything from [`Scepticism Engine – Conversational Core (Parallel Architecture).md`](Scepticism Engine – Conversational Core (Parallel Architecture).md)
+1. Copy everything from [`doupt_by_design.md`]
 2. Paste into your AI platform’s system prompt field
 3. Disable “reasoning” or “chain‑of‑thought” features (they waste tokens)
 4. Start asking questions
